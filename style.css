@@ -4,30 +4,14 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 20px;
-    background-color: #272727;
-    color: #fff;
+    background-color: #fff;
+    color: #272727;
 }
 
 h1, h2, p {
     margin: 0;
-}
-
-h1 {
-    font-weight: 400;
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-img {
-    object-fit: contain;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
 }
 
 ul {
@@ -37,103 +21,153 @@ ul {
 }
 
 .header {
+    background-image: url("../img/back.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-color: #CCE59D;
+    padding: 25vh 30px;
+    margin-bottom: 60px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 2%;
-    border-bottom: 1px solid #fff;  
+    flex-direction: column;
+    align-items: flex-end;
 }
 
-.main-list {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-main {
-    display: flex;
-    height: 100vh;
-}
-
-.form-block {
-    padding: 30px 30px;
-    border-right: 1px solid #fff;
-    width: 25%;
-}
-
-.meme-block {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 75%;
-    position: relative;
-}
-
-.meme {
-    width: fit-content;
-    max-height: calc(100vh - 200px);
-    max-width: 40%;
-    
-}
-
-.form-list {
+.header__text {
     display: flex;
     flex-direction: column;
     gap: 30px;
+    width: fit-content;
+    text-align: right;
 }
 
-.form-list_item {
+main {
+    padding: 0 30px 100px;
+}
+
+.main__title {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.list__item a {
+    text-decoration: none;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-}
-
-select {
-    font: inherit;
-    padding: 5px;
-    border-radius: 10px;
-    border: none;
-}
-
-
-.input_text {
-    font: inherit;
-    padding: 10px;
-    border-radius: 10px;
-    border: none;
-}
-
-button {
-    font: inherit;
-    border-radius: 10px;
-    border: 1px solid #fff;
-    color: #fff;
-    background: #272727;
-    padding: 10px;
-    cursor: pointer;
+    align-items: center;
+    color: inherit;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 24px;
+    border: 1px solid #EB8028;
     transition: 0.2s;
 }
-
-button:hover {
-    background: #fff;
-    color: #272727;
+.item__img {
+    object-fit: contain;
+    width: 150px;
 }
 
-.text_top {
-    position: absolute;
+.list__item a:hover {
+    box-shadow: 1px 1px 4px 4px #0EB07C;
+}
+
+.main__rez {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.rez__img {
+    object-fit: contain;
+    width: 300px;
+}
+
+.main__title--margin {
+    margin-bottom: 50px;
+}
+
+.main__link {
+    display: inline-block;
+    text-decoration: none;
+    padding: 20px 0;
+    width: 300px;
+    border-radius: 20px;
+    background-color: #0EB07C;
     text-align: center;
-    top: 20%;
-    font-weight: bold;
-    font-size: 24px;
-    z-index: 10;
+    cursor: pointer;
+    color: #fff;
 }
 
-.text_bottom {
-    position: absolute;
-    text-align: center;
-    bottom: 20%;
-    font-weight: bold;
-    font-size: 24px;
-    z-index: 10;
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
 }
 
+
+.user input {
+    padding: 10px;
+    border: 1px solid #EB8028;
+    background: inherit;
+    border-radius: 5px;
+    font: inherit;
+    width: 100%;
+    color: #EB8028;
+}
+
+.user input:focus,
+.user input:active {
+    border: 1px solid #EB8028;
+    outline: none;
+}
+
+.user {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.user-info {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+label {
+    display:inline-block ;
+    margin-bottom: 10px;
+}
+
+.address-date {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.delivery {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    width: 10%;
+    padding: 10px;
+    min-width: 300px;
+    cursor: pointer;
+    align-self: center;
+    border: none;
+    border-radius: 10px;
+    background: #0EB07C;
+    font: inherit;
+    color: #fff;
+}

@@ -1,50 +1,80 @@
 # Import
-from flask import Flask, render_template, request, send_from_directory
+from flask import Flask, render_template, request
 
 
 app = Flask(__name__)
 
-# Formularz z rezultatami
-@app.route('/', methods=['GET','POST'])
+def result_calculate(size, lights, device):
+    # Zmienne umożliwiające obliczenie poboru energii przez urządzenia
+    home_coef = 100
+    light_coef = 0.04
+    devices_coef = 5   
+    return float(size * home_coef + lights * light_coef + device * devices_coef)
+
+# Pierwsza strona
+@app.route('/')
 def index():
-    if request.method == 'POST':
-        # odczytywanie wybranego obrazka
-        selected_image = request.form.get('image-selector')
+    return render_template('index.html')
+# Druga strona
+@app.route('/<size>')
+def lights(size):
+    return render_template(
+                            'lights.html', 
+                            size=size
+                           )
 
-        # Zadanie #2. Odczytywanie tekstu
-        text_top = request.form.get('textTop')
-        text_bottom = request.form.get('textBottom')
-        # Zadanie #3. Odczytywanie pozycji tekstu
-        selected_color = request.form.get('color-selector')
-        text_top_y = request.form.get('textTop_y')
-        text_bottom_y = request.form.get('textBottom_y')
-        text_top_x = request.form.get('textTop_y')
-        text_bottom_x = request.form.get('textBottom_y')
-        # Zadanie #3. Odczytywanie koloru tekstu
+# Trzecia strona
+@app.route('/<size>/<lights>')
+def electronics(size, lights):
+    return render_template(
+                            'electronics.html',                           
+                            size = size, 
+                            lights = lights                           
+                           )
+
+# Obliczenia
+@app.route('/<size>/<lights>/<device>')
+def end(size, lights, device):
+    return render_template('end.html', 
+                            result=result_calculate(float(size),
+                                                    float(lights), 
+                                                    float(device)
+                                                    )
+                        )
+# Formularz
+@app.route('/form')
+def form():
+    return render_template('form.html')
+
+# Wyniki formularza
+@app.route('/submit', methods=['POST'])
+def submit_form():
+    # Zadeklaruj zmienne do gromadzenia danych
+    name = request.form['name']
+    email = request.form['email']
+    address = request.form['address']
+    date = request.form['date']
+    with open('form.txt', 'a',) as f:
+        f.write(name + '\n')
+        f.write(email + '\n')
+        f.write(address + '\n')
+        f.write(date + '\n')
         
-
-        return render_template('index.html', 
-                               # Wyświetlanie wybranego obrazka
-                               selected_image=selected_image, 
-
-                               # Zadanie #2. Wyświetlanie tekstu
-                               text_top = text_top,
-                               text_bottom = text_bottom,
-                               # Zadanie #3. Wyświetlanie koloru
-                               selected_color = selected_color,
-                               text_top_y = text_top_y,
-                               text_bottom_y = text_bottom_y,
-                               # Zadanie #3. Wyświetlanie pozycji tekst
-                               text_top_x = text_top_x,
-                               text_bottom_x = text_bottom_x
-                               )
-    else:
-        # Wyświetlanie pierwszego obrazka, jako grafika domyślna
-        return render_template('index.html', selected_image='logo.svg')
-
-
-@app.route('/static/img/<path:path>')
-def serve_images(path):
-    return send_from_directory('static/img', path)
+    # Możesz zapisać swoje dane lub wysłać je e-mailem
+    return render_template('form-result.html', 
+                           # Umieść tutaj zmienne
+                           name=name,
+                           email=email,
+                           address = address,
+                           date = date,
+                           )
 
 app.run(debug=True)
+
+#JSON
+# {
+#     "name": "Jan",
+#     "email": "przyklad@gmail.com",
+#     "date": "2024-06-15",
+#     "address": " ul przykładowa 12, 00-000 Miasto"
+# }
