@@ -1,0 +1,15 @@
+# eco-sth
+- ja raczej stronkę nie,coś z ai
+- mieliśmy taki od emisjii domu >home-emmis
+- ja bym chciałą zrobić muli tool
+- edukacjyjna >edu
+- jakiś model nlp do sumowania stron internet jako helper >sumix oraz do >edu może
+- quizy >quizzes
+- interfejs przyjazny dla młodego użytkownika
+- do rozpoznawaniu gazów w komine appka >chimney-gas
+- chyba bot discord
+- niby struktura strony, main głównie + help >mailp
+- memy pokazuje gotowe >memes
+- taka funkcja, która generuje ciekawostki >trivies 
+- prefix >
+- 
