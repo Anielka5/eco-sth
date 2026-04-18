@@ -1,3 +1,4 @@
+import random
 lista = ["Zanieczyszczenie powietrza jest odpowiedzialne za około 7 milionów zgonów rocznie na całym świecie",
 "Smog to mieszanka dymu i mgły, która powstaje głównie w wyniku spalania węgla i innych paliw kopalnych.",
 "Zanieczyszczenie wody dotyka około 2 miliardów ludzi, którzy nie mają dostępu do czystej wody pitnej.",
