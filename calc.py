@@ -11,7 +11,26 @@ def result_calculate(size, lights, device):
     light_coef = 0.04
     devices_coef = 5   
     return float(size * home_coef + lights * light_coef + device * devices_coef)
-
+{%if result < 50%}
+        <img class="rez__img" src="../../static/img/planet_good.svg" alt="">
+        <span>Twój wynik: {{result}} kWh</span>
+        <span>Twój dom jest wyjątkowo wydajny, jeśli chodzi o zużycie energii!</span> 
+        {%elif result > 70 and result <= 151%}
+        <img class="rez__img" src="../../static/img/planet_good.svg" alt="">
+        <span>Twój wynik: {{result}} kWh</span>
+        <span>Twój dom jest bardzo wydajny, jeśli chodzi o zużycie energii!</span>
+        {%elif result >= 151 and result < 300%}
+        <img class="rez__img" src="../../static/img/planet_medium.svg" alt="">
+        <span>Twój wynik: {{result}} kWh</span>
+        <span>Efektywność energetyczna Twojego domu jest średnia!</span>
+        
+        <span>Chcesz uczynić świat bardziej ekologicznym miejscem? Wypełnij formularz, a my wykonamy dla Ciebie eko-build!</span>
+        <a href="{{ url_for('form') }}" class = "main__link">Wypełnij formularz</a>
+        {%elif result >= 300%}
+        <img class="rez__img" src="../../static/img/planet_bad.svg" alt="">
+        <span>Twój wynik: {{result}} kWh</span>
+        <span>Efektywność energetyczna Twojego domu jest poniżej średniej!</span>
+        <a href="{{ url_for('form') }}" class = "main__link">Wypełnij formularz</a>
 # Pierwsza strona
 @app.route('/')
 def index():
