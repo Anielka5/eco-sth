@@ -13,7 +13,7 @@ async def on_ready():
     print(f'Zalogowaliśmy się jako {bot.user}')
 
 @bot.command()
-async def ciekawostka(ctx, how_much:int):
+async def ciekawostka_discord(ctx, how_much:int):
     await ctx.send(ciekawostka(how_much))
 
 bot.run("token")
