@@ -101,8 +101,9 @@ async def on_ready():
     print(f'Zalogowaliśmy się jako {bot.user}')
 
 @bot.command()
-async def ciekawostka(ctx):
-    losowanie = random.choice(lista)
-    await ctx.send(losowanie)
+async def ciekawostka(ctx, how_much:int):
+    for i in range(how_much):
+        losowanie = random.choice(lista)
+        await ctx.send(losowanie)
 
-bot.run("MTQyMTQwOTY2MDI1MDA5NTczOA.GJsP_X.QdrnHZbLh2QtCBl2vW0Ze6LylcBAyXgI7C_HV4")
+bot.run("token")
