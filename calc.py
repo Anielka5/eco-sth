@@ -3,7 +3,8 @@ from flask import Flask, render_template, request
 
 
 app = Flask(__name__)
-
+def metraz(size):
+    
 def result_calculate(size, lights, device):
     # Zmienne umożliwiające obliczenie poboru energii przez urządzenia
     home_coef = 100
