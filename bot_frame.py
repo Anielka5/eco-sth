@@ -472,5 +472,3 @@ async def D(ctx):
     else:
         await ctx.send("wystąpił jakiś błąd")
 
-
-bot.run("MTQyMTQwOTY2MDI1MDA5NTczOA.Gin8Az.A_IWVn6d3NYp74y3qr2HqrulVl7Gr9yCeiB3SQ")
