@@ -22,10 +22,9 @@ Podzczas wpisywania na czacie serwera komendy home_emmis musimy wprowadzić jesz
 Quiz składa się z 20 pytań, na każde z nich jest odpowiedź A lub B lub C lub D. Uwaga: Na jedno pytanie może być kilka odpowiedzi, wtedy wpisujemy tylko jedną.
 ### rozpoznawanie śmieci
 (todo)
-Po wywołaniu komendy program sprawdza, czy są jakieś załaczniki. Potem ten załącznik zapisuje w zmiennej i zapisuje załącznik na dysku twardym. Uruchamia funkcję get_class() z modelem keras, labelsami i linkiem do załączonego zdięcia. Funkcja get_class to funkcja w pliku model.py, która wykorzystuje bilitokekę keras (tf-keras) i uprzednio wytrenowany model Teachable Machine, która identyfikuje i zwraca kolor kosza, do którego ma być wrzucony obiekt na zdięciu, jeżeli jego pewność, że ten obiekt powinno się wrzucić do tego kosza jest większa niż 40%. Gdy ten warunek się nie spełni, wtedy wysyła komunikat o nie rozpoznaniu zdięcia. Jeżeli model AI zdięcie rozpoznał, to program porównuje dane swoje z danymi użytkownika. Jeżeli dane się powielają, to program dodaje dane do listy users, w przeciwnym wypadku do listy oszustów.
-Dodatkowo, program informuje nas w konsoli, że mamy dużo podejrzanych o oszustwo.
+Po wywołaniu komendy program sprawdza, czy są jakieś załaczniki. Potem ten załącznik zapisuje w zmiennej i zapisuje załącznik na dysku twardym. Uruchamia funkcję get_class() z modelem keras, labelsami i linkiem do załączonego zdięcia. Funkcja get_class to funkcja w pliku model.py, która wykorzystuje bilitokekę keras (tf-keras) i uprzednio wytrenowany model Teachable Machine, która identyfikuje i zwraca kolor kosza, do którego ma być wrzucony obiekt na zdjęciu, jeżeli jego pewność, że ten obiekt powinno się wrzucić do tego kosza jest większa niż 40%. Gdy ten warunek się nie spełni, wtedy wysyła komunikat o nie rozpoznaniu zdjęcia. Jeżeli model AI zdięcie rozpoznał, to program daje nam informacje gdzie mamy wrzucić dany śmieć ze zdjęcua zdjęcie.
 ******* 
-Zalecana jest zmiana modelu .h5, ponieważ jest to wczesna wersja modelu, która zawiera tylko identyfikację mężczyzn i wprowadzenie rozróżniania AI od prawdziwych.
+Zalecana jest zmiana modelu .h5, ponieważ ta wersja modelu, nie zawiera odpadów bio, ubrań
 ## Wersja oprogramowania i bibliotek
 * Python: 3.11
 * discord: 2.3.2
