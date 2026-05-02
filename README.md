@@ -3,7 +3,8 @@
 * krótko o programie
 * instrukcja dla użytkownika
 * co ten program robi od strony backendu i proponowane zmiany
-* wersja oprogramowania, biblioteki i ich wersje, materiały 
+* wersja oprogramowania, biblioteki i ich wersje
+* licencje, materiały poczodzące z innych żródeł
 ## krótko o programie
 Ten program zawiera quizy, ciekawostki, rozpoznawanie śmieci (testy) i krótkie teksty o zanieczyszceniach powietrza.
 ## Instrukcja Użytkownika
@@ -72,3 +73,15 @@ Zalecana jest zmiana modelu .h5, ponieważ ta wersja modelu, nie zawiera odpadó
 * wheel              0.47.0
 * wrapt              2.1.2
 * yarl               1.23.0
+## Licencja, materiały 2
+Ten projekt jest udostępniany na licencji MIT.
+
+W procesie trenowania modelu AI wykorzystano zbiór danych **TrashNet** autorstwa Gary'ego Thunga i Mindy Yang.
+* **Źródło:** (https://github.com/garythung/trashnet)
+* **Licencja zbioru danych:** MIT License
+
+Copyright (c) 2016 Gary Thung, Mindy Yang
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
